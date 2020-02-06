@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="DriverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="Url" value="jdbc:mysql://localhost:3306/shop"></property>
+        <property name="Username" value="root"></property>
+        <property name="Password" value="123456"></property>
+    </bean>
+    <bean id="jdt" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="ds"></property>
+    </bean>
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <bean id="ds1" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="DriverClassName" value="${jdbc.driverClass}"></property>
+        <property name="Url" value="${jdbc.url}"></property>
+        <property name="Username" value="${jdbc.username}"></property>
+        <property name="Password" value="${jdbc.password}"></property>
+    </bean>
+    <bean id="jdt1" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="ds1"></property>
+    </bean>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="DriverClassName" value="${jdbc.driverClass}"></property>
+        <property name="Url" value="${jdbc.url}"></property>
+        <property name="Username" value="${jdbc.username}"></property>
+        <property name="Password" value="${jdbc.password}"></property>
+    </bean>
+</beans>
