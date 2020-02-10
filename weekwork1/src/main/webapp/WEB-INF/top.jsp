@@ -46,7 +46,6 @@
     <div class="first">
         <h1>xxx后台管理系统</h1>
         <a href="#" id="ff">退出</a>
-        <h3>用户：${us.username}</h3>
     </div>
 </div>
 </body>

@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>管理员登录</title>
+    <title>登录</title>
     <style>
         .wk{
             width: 100%;
@@ -57,18 +57,29 @@
             width: 80px;
             margin-left: 100px;
         }
+        #fr a{
+            display: block;
+            width: 80px;
+            height: 25px;
+            background-color: #d3d3d3;
+            text-decoration: none;
+            margin-left: 200px;
+            text-align: center;
+            line-height: 25px;
+        }
     </style>
 </head>
 <body>
 <div class="wk">
     <div class="current">
         <div id="fr">
-            <h1 id="">后台管理系统</h1>
+            <h1 id="">欢迎</h1>
             <form action="/backed/user/login" method="post" >
                 用户名:&nbsp;<input type="text" placeholder="账号" name="username" id="user" onfocus="show('user','用户名必填！')" onblur="check('user','用户名不能为空！')"><span id="userspan"></span><br>
                 密&nbsp;&nbsp;&nbsp;码:&nbsp;<input type="password" placeholder="密码" name="password" id="ps" onfocus="show('ps','密码必填！')" onblur="check('ps','密码不能为空！')"><span id="psspan"></span><br>
                 <input type="submit" value="登录" id="but">
             </form>
+            <a href="logon.jsp">注册</a>
         </div>
     </div>
 </div>

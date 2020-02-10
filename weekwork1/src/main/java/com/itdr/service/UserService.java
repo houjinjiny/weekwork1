@@ -5,4 +5,6 @@ import com.itdr.pojo.Users;
 
 public interface UserService {
     ResponseCode<Users> login(String username, String password);
+
+    ResponseCode<Users> logon(String username, String password);
 }
